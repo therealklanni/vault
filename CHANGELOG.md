@@ -1,5 +1,52 @@
 # ChangeLog for Brave Vault
 
+## [candidate 0.0.5]()
+
+* added:
+    * client example
+    * `process.env.VAULT_COLLECTION_RESET`
+
+* fixed:
+    * `.gitignore` more checks
+    * controller schema fixes
+    * BitGo driver
+
+* removed:
+    * OBE controllers: `intents.js`, `oip.js`, `replacement.js`
+    * OBE drivers: `oip.js`
+    * use of `proximo`
+
+* replaced:
+    * `eccrypto` -> `elliptic`
+    * `node 5.1.1`
+
+
+## [candidate 0.0.4](https://github.com/brave/vault/commit/447b9efb4c7dbf308c57d056346d2d61da35f3ed)
+
+* in progress:
+    * client example
+
+* added:
+    * support for `header`/`payload`/`trailer` envelopes for cryptographic authentication and authorization
+    * `/ping` operation to bootstramp timestamps for `PUT /.../session/...`
+    * `/.../session/` operations and `sessions` database collection
+
+* replaced:
+    * `SharingApplicationState.md` -> `Principles.md`
+    * `statAdReplaceCount` -> `replacements`
+    * ad replacements from intents -> client now specifies categories and keywords
+    * `node` now `5.1.1`, `eccrypto` -> `elliptic`
+
+* fixed:
+    * `.gitignore` more checks
+    * `ad-manifest.js` enforce limit parameter to maximum of 100
+    * various schema issues
+    * `wallet.js` driver for `bitgo` no longer requires `bitgoUser` configuration option
+
+* removed:
+    * app_states` database collection
+
+
 ## [candidate 0.0.3](https://github.com/brave/vault/commit/dee106a36a80227b1ec7a49b31aa734fc85c5ee1)
 
 * added:
@@ -42,6 +89,7 @@
 
 * deprecated: `GET /sync/{userId}` and `POST /sync` by `GET /v1/users/{userId}/appState` and `PUT /v1/users/{userId}/appState`
     * supports _advisory locking_ using "last timestamp" strategy
+
 
 ## [candidate 0.0.1](https://github.com/brave/vault/commit/e462354cb52a474a1dfb8fe87ab05aee1e8b56df)
 
